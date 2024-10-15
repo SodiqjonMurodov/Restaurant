@@ -1,0 +1,15 @@
+.aboutUs {
+    padding: 20px 10px;
+}
+
+.aboutUs-blok h2, .aboutUs-blok h1 {
+    font-family: "Poppins", sans-serif;
+}
+
+.aboutUs-line {
+    width: 200px;
+    height: 3px;
+    border-radius: 5px;
+    background-color: var(--main-color);
+    margin-bottom: 5px;
+}

@@ -1,0 +1,80 @@
+.section {
+    padding: 50px 10px;
+    background-image: url('/images/section/section-bg.jpg');
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+    background-color: #00000087;
+    background-size: cover;
+}
+
+.section h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 300%;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 20px;
+}
+
+.section-blok {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.section-blok__section {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.section-image {
+    width: 400px;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+.section-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.859), rgba(0, 0, 0, 0));
+    color: white;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+.section-info h1 {
+    font-size: 250%;
+}
+
+.section-info h4 {
+    font-size: 110%;
+}
+
+.section-blok__section:hover .section-image {
+    transform: scale(1.1);
+    /* Увеличивает изображение при наведении */
+}
+
+.section-blok__section:hover .section-info {
+    transform: translateY(0);
+    /* Показывает информацию при наведении */
+}
+
+@media (max-width: 828px) {
+    .section-blok {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 482px) {
+    .section-image {
+        width: 100%;
+        height: 100%;
+    }
+}
