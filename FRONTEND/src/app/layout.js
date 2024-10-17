@@ -13,6 +13,7 @@ import './styles/loadmain.css'
 import './styles/chefs.css'
 import './styles/testimonials.css'
 import './styles/gallery.css'
+import './styles/menu.css'
 
 import LoadPage from './components/LoadPage'
 import ScrollTop from './components/ScrollTop'

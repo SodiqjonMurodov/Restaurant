@@ -78,7 +78,7 @@ class FeedbackCreateApiView(generics.CreateAPIView):
 
 
 class MenuHomeListApiView(generics.ListAPIView):
-    queryset = Menu.objects.all()[:3]
+    queryset = Menu.objects.filter(home_select=True)[:3]
     serializer_class = MenuHomeSerializer
 
 

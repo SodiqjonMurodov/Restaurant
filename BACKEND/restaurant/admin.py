@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Menu, Ingredients, MediaLinks, Rating, Cooks, Company, Feedback, Post, Gallery
+from .models import Category, Menu, Ingredients, MediaLinks, Rating, Cooks, Company, Feedback, Post, Gallery, Testimonial, Service
 
 
 admin.site.register(Category)
@@ -12,4 +12,6 @@ admin.site.register(Company)
 admin.site.register(Feedback)
 admin.site.register(Post)
 admin.site.register(Gallery)
+admin.site.register(Testimonial)
+admin.site.register(Service)
 

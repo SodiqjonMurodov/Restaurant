@@ -9,8 +9,8 @@ export default function Header() {
         <h1 className="header__h1-2">Restaurant</h1>
         <h2 className="header__h1-3">Foodies loves us, serving the world with our burns!</h2>
         <div className="header-blok__container">
-          <Link href="/menu"><button>EXPLORE FOOD</button></Link>
-          <Link href="/booking"><button>BOOK A TABLE</button></Link>
+          <Link href="/menu"><button className='header__button-1'>EXPLORE FOOD</button></Link>
+          <Link href="/booking"><button className='header__button-2'>BOOK A TABLE</button></Link>
         </div>
       </div>
     </div>

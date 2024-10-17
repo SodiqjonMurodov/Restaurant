@@ -36,7 +36,6 @@
     font-size: 110%;
     padding: 7px 0;
     border-radius: 20px;
-    background: none;
     border: 2px solid var(--main-color);
     transition: .5s;
     cursor: pointer;
@@ -44,8 +43,17 @@
     color: #fff;
 }
 
+.header__button-1 {
+    background-color: var(--main-color);
+}
+
+.header__button-2 {
+    background: none;
+}
+
 .header-blok__container button:hover {
     background-color: var(--main-color);
+    box-shadow: 0 0 10px 5px var(--main-color);
 
 }
 

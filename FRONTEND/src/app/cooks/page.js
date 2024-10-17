@@ -2,13 +2,15 @@ import React from 'react';
 import Title from '../components/Title';
 import Link from 'next/link';
 
-const CooksPage = async () => {
+const CookPage = async () => {
+    // Получение данных с сервера
     const res = await fetch('http://127.0.0.1:8000/api/v1/cooks');
 
+    // Проверка на успешность ответа
     if (!res.ok) {
         throw new Error('Ошибка при получении данных');
     }
-
+    
     const data = await res.json();
 
     return (
@@ -20,10 +22,8 @@ const CooksPage = async () => {
                 <div>
                     {data.map((item) => (
                         <div key={item.id}>
-                            <h1>Возраст: {item.age}</h1>
-                            <h1>Полное имя: {item.full_name}</h1>
-                            <Link href={`/cooks/${item.id}`}>Detail</Link>
-                            <img src={item.image} alt={item.full_name} style={{width: '100px'}} />
+                            <h1>{item.id}</h1>
+                            <Link href={`cooks/${item.id}`}></Link>
                         </div>
                     ))}
                 </div>
@@ -32,4 +32,4 @@ const CooksPage = async () => {
     );
 };
 
-export default CooksPage;
+export default CookPage;

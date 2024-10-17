@@ -1,13 +1,14 @@
-import Chefs from "./components/Chefs";
+import Chefs from "./components/chefs/chefs";
 import Header from "./components/Header";
-import Section from "./components/Section";
-import Testimonials from "./components/Testimonials";
+import MenuHome from "./components/menuH/menuH";
+import Testimonials from "./components/testimonials/Testimonials";
+
 
 export default function Home() {
   return (
     <div>
       <Header />
-      <Section />
+      <MenuHome />
       <Chefs />
       <Testimonials />
     </div>
