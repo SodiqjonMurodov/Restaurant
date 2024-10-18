@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 
 export default function TablesPage({ data }) {
@@ -7,7 +8,7 @@ export default function TablesPage({ data }) {
                 <p>Нет столов!</p>
             ) : (
                 <div>
-                    {data.map((item, index) => (
+                    {data.map((item) => (
                         <div key={item.id}>
                             <h1>{item.name}</h1>
                         </div>

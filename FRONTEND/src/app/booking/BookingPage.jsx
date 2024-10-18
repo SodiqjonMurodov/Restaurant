@@ -1,4 +1,4 @@
-'use client';  // Указываем, что это клиентский компонент
+'use client'; // Указываем, что это клиентский компонент
 
 import React, { useState, useEffect } from 'react';
 
@@ -33,7 +33,7 @@ const BookingPage = () => {
                 const result = await res.json();
                 setData(result);
             } catch (err) {
-                console.error('Ошибка получения данных:', err);
+                setError('Ошибка получения данных: ' + err.message);
             }
         };
 

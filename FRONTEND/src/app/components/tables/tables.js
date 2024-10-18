@@ -1,8 +1,8 @@
 import React from 'react';
-import TablesPage from './tablespage';
+import TablesPage from './TablesPage';
 
-export default async function Gallery() {
-    // Получение данных с сервера
+export default async function Tables() {
+
     const res = await fetch('http://127.0.0.1:8000/api/v1/tables');
 
     if (!res.ok) {

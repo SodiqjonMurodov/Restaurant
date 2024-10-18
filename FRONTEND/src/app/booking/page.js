@@ -1,7 +1,7 @@
-'use client'; // Указываем, что это клиентский компонент
+'use client';
 
-import Title from '../components/Title';
 import Tables from '../components/tables/tables';
+import Title from '../components/Title';
 import BookingPage from './BookingPage';
 
 const Booking = () => {
@@ -9,10 +9,9 @@ const Booking = () => {
         <>
             <Title />
             <Tables />
-            <BookingPage /> {/* Компонент BookingPage будет управлять получением данных и состояниями */}
+            <BookingPage />
         </>
     );
 };
 
 export default Booking;
-
