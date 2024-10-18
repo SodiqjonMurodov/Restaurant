@@ -15,7 +15,7 @@ export default function Footer() {
         </div>
         <div className="footer-blok__section footer-blok__section-2">
           <div className="footer-blok__section-container">
-            <b className="footer-blok__section__b">Useful Links</b>
+            <b className="footer-blok__section__b">Полезные</b>
             <br /><br />
             <div>
               <MdKeyboardArrowRight className="footer-blok__section-container__icon" />
