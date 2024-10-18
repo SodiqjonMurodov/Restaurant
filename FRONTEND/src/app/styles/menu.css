@@ -1,3 +1,7 @@
+.menu__main {
+    background-color: var(--dark-color);
+}
+
 .categories {
     display: flex;
     justify-content: center;
@@ -6,27 +10,34 @@
 }
 
 .category-btn {
-    padding: 10px 20px;
+    font-size: 120%;
+    padding: 5px 20px;
     margin: 0 10px;
     border: none;
     background-color: #333;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
+    text-transform: capitalize;
+    min-width: 70px;
 }
 
 .category-btn.active {
-    background-color: #ff6600;
+    background-color: var(--main-color);
+    border: 1px solid #fff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 .category-btn:hover {
-    background-color: #ff6600;
+    background-color: var(--main-color);
 }
 
 .menu-items {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     position: relative;
     padding: 0 10px 20px 10px;
 }
@@ -35,41 +46,74 @@
     width: 300px;
     padding: 20px;
     margin: 10px;
-    background-color: #f9f9f9;
+    background-color: var(--main-color);
     border-radius: 15px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Начальная прозрачность для плавного появления */
+    transform: translateY(20px); /* Начальное смещение вниз */
     transition: transform 0.5s ease, opacity 0.5s ease;
-    opacity: 1;
-    transform: translateY(0);
+    overflow: hidden;
 }
 
-.menu-item img {
-    width: 100%;
-    border-radius: 10px;
+.menu-item.fade-in {
+    opacity: 1; /* Плавное появление */
+    transform: translateY(0); /* Возвращаем на место */
 }
 
-.fade-out {
+.menu-item.fade-out {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(20px); /* Элемент смещается вниз и исчезает */
+    pointer-events: none; /* Элемент не будет взаимодействовать */
 }
 
-.fade-in {
-    opacity: 1;
-    transform: translateY(0);
+.menu-item:hover {
+    opacity: .7;
 }
 
-@keyframes moveIn {
+.menu-item a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.menu__image:hover {
+    transform: scale(1.1);
+}
+
+.menu__title {
+    text-align: center;
+}
+
+.menu__subtitle {
+    font-size: 70%;
+    font-style: italic;
+    min-height: 100px;
+    color: #d6d6d6;
+}   
+
+.menu__price {
+
+}
+
+@keyframes fadeIn {
     0% {
-        transform: translateY(20px);
         opacity: 0;
+        transform: translateY(20px);
     }
     100% {
-        transform: translateY(0);
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@keyframes moveOut {
+@keyframes fadeOut {
     0% {
         opacity: 1;
         transform: translateY(0);

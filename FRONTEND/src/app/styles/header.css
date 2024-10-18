@@ -61,6 +61,11 @@
     .header {
         padding-left: 0;
         text-align: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-color: #000000ca;
     }
     .header-blok__container {
         justify-content: center;

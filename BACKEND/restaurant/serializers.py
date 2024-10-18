@@ -43,16 +43,10 @@ class MenuHomeSerializer(serializers.ModelSerializer):
         fields = ['id', 'title', 'subtitle', 'category', 'image', 'price']
 
 
-class CooksListSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Cooks
-        fields = ['id', 'full_name', 'description', 'image', 'age', 'skill']
-
-
 class CooksHomeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cooks
-        fields = ['id', 'full_name', 'image', 'skill']
+        fields = ['id', 'full_name', 'image', 'age', 'skill']
 
 
 class PostsListSerializer(serializers.ModelSerializer):

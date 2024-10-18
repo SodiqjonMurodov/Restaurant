@@ -58,7 +58,7 @@ export default function GalleryPage({ data }) {
                                 alt={`Gallery Image ${item.id}`}
                                 className="gallery-image"
                                 width={500}
-                                height={300 + Math.floor(Math.random() * 200)} // Случайная высота от 300 до 500
+                                height={500}
                                 onClick={() => openCarousel(index)}
                             />
                         </div>

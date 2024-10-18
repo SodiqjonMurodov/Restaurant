@@ -14,7 +14,7 @@ export default function ChefsPage({data}) {
                         <div key={item.id} className="chefs-blok__section">
                             <Image src={item.image} alt={item.full_name} width={500} height={500} />
                             <p className="chefs__title">{item.full_name}</p>
-                            <p className="chefs__category">{item.skill}</p>
+                            <p className="chefs__category">{item.skill} лет опыта</p>
                         </div>
                     ))
                 )}

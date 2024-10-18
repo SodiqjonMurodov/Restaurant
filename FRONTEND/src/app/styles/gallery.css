@@ -1,25 +1,28 @@
-/* Галерея изображений с использованием Masonry */
 .gallery {
     display: flex;
-    margin-left: -20px; /* Отступы между колонками */
+    margin-left: -20px;
     width: auto;
+    padding: 20px 10px;
 }
 
 .gallery-column {
-    padding-left: 20px; /* Отступ внутри колонки */
-    background-clip: padding-box;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-left: 20px;
 }
 
 .gallery-item {
-    margin-bottom: 20px; /* Отступ между элементами галереи */
+    margin-bottom: 20px;
+    overflow: hidden;
 }
 
 .gallery-image {
-    width: 100%;
-    height: auto; /* Высота будет определяться случайным образом в компоненте */
+    width: 500px;
+    height: 250px;
     object-fit: cover;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: transform 0.3s ease;
 }
 
@@ -49,29 +52,30 @@
     color: #ffffff;
     cursor: pointer;
     z-index: 1001;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: none;
     border: none;
     transition: 0.3s;
 }
 
 .download-button {
     position: absolute;
-    top: 20px;
-    right: 120px;
-    font-size: 30px;
-    color: #ffffff;
+    top: 32px;
+    right: 90px;
+    font-size: 25px;
+    color: #e1e1e1;
     cursor: pointer;
     z-index: 1001;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: none;
     border: none;
     padding: 10px;
     border-radius: 50%;
 }
 
 .carousel-image {
-    max-width: 80%;
-    max-height: 80vh;
-    object-fit: contain;
+    display: flex;
+    margin: auto;
+    width: 50%;
+    height: 50%;
     border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
 }
@@ -87,4 +91,24 @@
     background: rgba(0, 0, 0, 0.5);
     padding: 5px 10px;
     border-radius: 5px;
+}
+
+@media (max-width: 740px) {
+    .carousel-image {
+        width: 80%;
+        height: 80%;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    }
+}
+
+@media (max-width: 620px) {
+    .close-button {
+        top: 20px;
+        right: 40px;
+    }
+    
+    .download-button {
+        top: 32px;
+        right: 70px;
+    }
 }

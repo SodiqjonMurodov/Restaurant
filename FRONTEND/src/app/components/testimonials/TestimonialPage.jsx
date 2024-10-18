@@ -1,40 +1,40 @@
-'use client'
+'use client';
 import React from 'react';
-import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 export default function TestimonialPage({ data }) {
-    // Настройки карусели
-    const settings = {
-        dots: true,
-        arrows: false,
-        infinite: data.length > 3, // Зацикливание только если отзывов больше, чем показывается
-        speed: 500,
-        slidesToShow: Math.min(3, data.length), // Количество отображаемых слайдов не больше, чем отзывов
-        slidesToScroll: 1,
-        customPaging: (i) => (
-            <button className="custom-dot"></button>
-        ),
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 1,
-                },
-            },
-            {
-                breakpoint: 640,
-                settings: {
-                    slidesToShow: 1,
-                },
-            },
-        ],
+    const responsive = {
+        superLargeDesktop: {
+            breakpoint: { max: 4000, min: 1024 },
+            items: 3,
+        },
+        desktop: {
+            breakpoint: { max: 1024, min: 768 },
+            items: 2,
+        },
+        tablet: {
+            breakpoint: { max: 768, min: 464 },
+            items: 1,
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1,
+        },
     };
 
     return (
         <div className="testimonials">
-            <Slider {...settings}>
+            <Carousel
+                responsive={responsive}
+                infinite={data.length > 3} // Зацикливание
+                showDots={true}
+                customDot={<CustomDot />} // Используем кастомные доты
+                renderDotsOutside={false} // Оставляем доты внутри компонента
+                autoPlay={true} // Включаем автопрокрутку
+                autoPlaySpeed={3000} // Интервал автопрокрутки (3 секунды)
+                keyBoardControl={true} // Управление с клавиатуры
+            >
                 {(!data || data.length === 0) ? (
                     <p>Нет отзывов!</p>
                 ) : (
@@ -46,7 +46,17 @@ export default function TestimonialPage({ data }) {
                         </div>
                     ))
                 )}
-            </Slider>
+            </Carousel>
         </div>
     );
 }
+
+const CustomDot = ({ onClick, ...rest }) => {
+    const { active } = rest;
+    return (
+        <button
+            className={`custom-dot ${active ? 'active' : ''}`}
+            onClick={() => onClick()}
+        />
+    );
+};

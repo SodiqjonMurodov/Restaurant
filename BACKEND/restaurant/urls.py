@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import MenuHomeListApiView, CooksHomeListApiView, GalleryHomeListApiView, TestimonialsHomeListApiView, \
     ServicesHomeListApiView, MenuListApiView, MenuDetailApiView, PostsListApiView, PostDetailApiView, \
-    CooksListApiView, CookDetailApiView, GalleryListApiView, CompanyListApiView, FeedbackCreateApiView, \
+    GalleryListApiView, CompanyListApiView, FeedbackCreateApiView, \
     PostsHomeListApiView
 
 urlpatterns = [
@@ -16,8 +16,6 @@ urlpatterns = [
     # path('menu/<int:pk>/rate', SubmitRatingView.as_view(), name='submit-rating'),
     path('posts', PostsListApiView.as_view(), name='posts'),
     path('posts/<int:pk>', PostDetailApiView.as_view(), name='post'),
-    path('cooks', CooksListApiView.as_view(), name='cooks'),
-    path('cooks/<int:pk>', CookDetailApiView.as_view(), name='cook'),
     path('gallery', GalleryListApiView.as_view(), name='gallery'),
     path('feedback-form', FeedbackCreateApiView.as_view(), name='feedback'),
     path('contacts', CompanyListApiView.as_view(), name='contacts'),

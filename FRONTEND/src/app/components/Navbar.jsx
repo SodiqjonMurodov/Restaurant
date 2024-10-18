@@ -71,14 +71,8 @@ export default function Navbar() {
         <Link href="/" onClick={() => handleLinkClick('/')} style={{ color: activePage === '/' ? 'var(--main-color)' : '' }}>
           Home
         </Link>
-        <Link href="/cooks" onClick={() => handleLinkClick('/teachers')} style={{ color: activePage === '/cooks' ? 'var(--main-color)' : '' }}>
-          Cooks
-        </Link>
-        <Link href="/menu" onClick={() => handleLinkClick('/teachers')} style={{ color: activePage === '/menu' ? 'var(--main-color)' : '' }}>
+        <Link href="/menu" onClick={() => handleLinkClick('/menu')} style={{ color: activePage === '/menu' ? 'var(--main-color)' : '' }}>
           Menu
-        </Link>
-        <Link href="/booking" onClick={() => handleLinkClick('/teachers')} style={{ color: activePage === '/booking' ? 'var(--main-color)' : '' }}>
-          Book
         </Link>
         <Link href="/gallery" onClick={() => handleLinkClick('/gallery')} style={{ color: activePage === '/gallery' ? 'var(--main-color)' : '' }}>
           Gallery
@@ -89,12 +83,13 @@ export default function Navbar() {
         <Link href="/news" onClick={() => handleLinkClick('/news')} style={{ color: activePage === '/news' ? 'var(--main-color)' : '' }}>
           News
         </Link>
-        {isMobile && ( // Условие отображения ссылки "Contacts" только на мобильной версии
-          <Link href="/contacts" onClick={() => handleLinkClick('/contacts')} style={{ color: activePage === '/contacts' ? 'var(--main-color)' : '' }}>
-            Contacts
-          </Link>
-        )}
+        <Link className='navbar__link-button' href="/booking">
+          <button className="book-button" onClick={() => handleLinkClick('/booking')}>
+            Book a Table
+          </button>
+        </Link>
       </div>
+
       {isOpen && <div className="overlay" onClick={toggleMenu} />}
     </nav>
   );

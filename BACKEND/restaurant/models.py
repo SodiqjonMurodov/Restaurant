@@ -123,7 +123,6 @@ class Gallery(BaseModel):
 class Cooks(BaseModel):
     full_name = models.CharField(max_length=150)
     image = models.ImageField(upload_to='cooks')
-    description = models.TextField()
     age = models.IntegerField()
     skill = models.IntegerField()
 

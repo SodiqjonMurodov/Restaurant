@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Menu, Cooks, Gallery, Rating, Company, Feedback, Service, Testimonial, Post
-from .serializers import MenuListSerializer, MenuHomeSerializer, CooksListSerializer, CooksHomeSerializer, \
+from .serializers import MenuListSerializer, MenuHomeSerializer, CooksHomeSerializer, \
     GallerySerializer, CompanySerializer, FeedbackSerializer, TestimonialSerializer, ServiceSerializer, \
     PostsListSerializer, PostsHomeSerializer
 
@@ -41,15 +41,6 @@ class MenuDetailApiView(generics.RetrieveAPIView):
     queryset = Menu.objects.all()
     serializer_class = MenuListSerializer
 
-
-class CooksListApiView(generics.ListAPIView):
-    queryset = Cooks.objects.all()
-    serializer_class = CooksListSerializer
-
-
-class CookDetailApiView(generics.RetrieveAPIView):
-    queryset = Cooks.objects.all()
-    serializer_class = CooksListSerializer
 
 
 class PostsListApiView(generics.ListAPIView):
