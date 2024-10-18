@@ -5,7 +5,7 @@ import Image from 'next/image'
 export default function ChefsPage({data}) {
     return (
         <div className="chefs">
-            <h1>Meet our professionals</h1>
+            <h1>Наши Профессионалы!</h1>
             <div className="chefs-blok">
                 {(!data || data.length === 0) ? (
                     <p>Нет меню!</p>

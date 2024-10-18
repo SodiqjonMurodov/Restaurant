@@ -7,7 +7,7 @@ export default function Footer() {
     <div className="footer">
       <div className="footer-blok">
         <div className="footer-blok__section">
-          <p className="footer-blok__section-1__p1">About US</p>
+          <p className="footer-blok__section-1__p1">О Нас</p>
           <br />
           <p className="footer-blok__section-1__p2">Lorem Ipsum is simply dummy text of the printing
             and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -19,23 +19,23 @@ export default function Footer() {
             <br /><br />
             <div>
               <MdKeyboardArrowRight className="footer-blok__section-container__icon" />
-              <Link href="/" className="footer-blok__section-container__link">Home</Link>
+              <Link href="/" className="footer-blok__section-container__link">Главная</Link>
             </div>
             <div>
               <MdKeyboardArrowRight className="footer-blok__section-container__icon" />
-              <Link href="/about-us" className="footer-blok__section-container__link">About Us</Link>
+              <Link href="/about-us" className="footer-blok__section-container__link">Подробно</Link>
             </div>
             <div>
               <MdKeyboardArrowRight className="footer-blok__section-container__icon" />
-              <Link href="/booking" className="footer-blok__section-container__link">Book a table</Link>
+              <Link href="/booking" className="footer-blok__section-container__link">Забронировать</Link>
             </div>
             <div>
               <MdKeyboardArrowRight className="footer-blok__section-container__icon" />
-              <Link href="/menu" className="footer-blok__section-container__link">Menu</Link>
+              <Link href="/menu" className="footer-blok__section-container__link">Меню</Link>
             </div>
           </div>
           <div className="footer-blok__section-container">
-            <b className="footer-blok__section__b">Follow us</b>
+            <b className="footer-blok__section__b">Подпишитесь</b>
             <br /><br />
             <div>
               <MdKeyboardArrowRight className="footer-blok__section-container__icon" />
@@ -56,15 +56,15 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-blok__section footer-blok__section-3">
-          <b className="footer-blok__section__b">Contact US</b>
+          <b className="footer-blok__section__b">Связаться с нами</b>
           <br /><br />
-          <p className="footer-blok__section-3__p">Your Street Address, near subway alter Pole 65467 east direction, Atlanta</p>
-          <p className="footer-blok__section-3__p"><b>Phone:</b> +1 9989 8867 98, +1 6573 874636</p>
+          <p className="footer-blok__section-3__p">Адрес вашей улицы, рядом с метро 65467 east direction, Atlanta</p>
+          <p className="footer-blok__section-3__p"><b>Телефон:</b> +1 9989 8867 98, +1 6573 874636</p>
           <p className="footer-blok__section-3__p"><b>Email:</b> youremail@gmail.com</p>
         </div>
       </div>
       <div className="footer-footer">
-        <p>© Copyright <b>RESTAURANT</b>. All Rights Reserved</p>
+        <p>© Copyright <b>РЕСТОРАН</b>. Все права защищены!</p>
       </div>
     </div>
   )

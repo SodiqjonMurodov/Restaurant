@@ -69,23 +69,23 @@ export default function Navbar() {
           <FaTimes />
         </div>
         <Link href="/" onClick={() => handleLinkClick('/')} style={{ color: activePage === '/' ? 'var(--main-color)' : '' }}>
-          Home
+          Главная
         </Link>
         <Link href="/menu" onClick={() => handleLinkClick('/menu')} style={{ color: activePage === '/menu' ? 'var(--main-color)' : '' }}>
-          Menu
+          Меню
         </Link>
         <Link href="/gallery" onClick={() => handleLinkClick('/gallery')} style={{ color: activePage === '/gallery' ? 'var(--main-color)' : '' }}>
-          Gallery
+          Галлерея
         </Link>
         <Link href="/about-us" onClick={() => handleLinkClick('/about-us')} style={{ color: activePage === '/about-us' ? 'var(--main-color)' : '' }}>
-          About Us
+          О нас
         </Link>
         <Link href="/news" onClick={() => handleLinkClick('/news')} style={{ color: activePage === '/news' ? 'var(--main-color)' : '' }}>
-          News
+          Новости
         </Link>
         <Link className='navbar__link-button' href="/booking">
           <button className="book-button" onClick={() => handleLinkClick('/booking')}>
-            Book a Table
+            Бронируй
           </button>
         </Link>
       </div>

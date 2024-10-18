@@ -5,12 +5,12 @@ export default function Header() {
   return (
     <div className="header">
       <div className="header-blok">
-        <h1 className="header__h1-1">On Time Delicious Food</h1>
-        <h1 className="header__h1-2">Restaurant</h1>
-        <h2 className="header__h1-3">Foodies loves us, serving the world with our burns!</h2>
+        <h1 className="header__h1-1">Вкусная еда вовремя</h1>
+        <h1 className="header__h1-2">Ресторан</h1>
+        <h2 className="header__h1-3">Гурманы любят нас, ведь мы даем миру наши ожоги!</h2>
         <div className="header-blok__container">
-          <Link href="/menu"><button className='header__button-1'>EXPLORE FOOD</button></Link>
-          <Link href="/booking"><button className='header__button-2'>BOOK A TABLE</button></Link>
+          <Link href="/menu"><button className='header__button-1'>ИССЛЕДУЙТЕ ЕДУ</button></Link>
+          <Link href="/booking"><button className='header__button-2'>Забронировать</button></Link>
         </div>
       </div>
     </div>
