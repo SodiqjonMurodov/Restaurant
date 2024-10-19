@@ -1,5 +1,7 @@
 .aboutUs {
     padding: 20px 10px;
+    background-color: var(--night-color);
+    color: #fff;
 }
 
 .aboutUs-blok h2, .aboutUs-blok h1 {

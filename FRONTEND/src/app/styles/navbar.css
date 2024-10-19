@@ -37,7 +37,10 @@
 }
 
 .menu-links {
-    display: none;
+    display: flex;
+    justify-content: center; /* Центрируем элементы */
+    align-items: center; /* Выравниваем по вертикали */
+    gap: 20px; /* Пробелы между элементами */
 }
 
 .menu-links.active {
@@ -64,6 +67,22 @@
 
 .overlay {
     display: none;
+}
+
+.book-button {
+    padding: 10px 20px;
+    background-color: var(--dark-color);
+    border: 1px solid var(--main-color);
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: .5s;
+    font-size: 105%;
+}
+
+.book-button:hover {
+    background-color: var(--main-color);
 }
 
 @media (max-width: 768px) {

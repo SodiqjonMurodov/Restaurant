@@ -26,6 +26,7 @@ class Menu(BaseModel):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True)
     image = models.ImageField(upload_to='menus')
     price = models.IntegerField()
+    home_select = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.title}'
@@ -122,7 +123,6 @@ class Gallery(BaseModel):
 class Cooks(BaseModel):
     full_name = models.CharField(max_length=150)
     image = models.ImageField(upload_to='cooks')
-    description = models.TextField()
     age = models.IntegerField()
     skill = models.IntegerField()
 

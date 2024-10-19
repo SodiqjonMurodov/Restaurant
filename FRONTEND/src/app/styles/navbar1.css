@@ -10,7 +10,7 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .navbar1__hover {
@@ -37,12 +37,6 @@
 
 .navbar1__contact:hover {
     opacity: .8;
-}
-
-@media (max-width: 769px) {
-    .navbar1__contact {
-        display: none;
-    }
 }
 
 @media (max-width: 769px) {

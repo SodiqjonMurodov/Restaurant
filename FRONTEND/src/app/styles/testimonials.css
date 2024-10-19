@@ -1,18 +1,21 @@
 .testimonials {
-    padding: 20px;
+    padding: 20px 20px 50px 20px;
     color: #fff;
     background-color: var(--dark-color);
 }
 
 .testimonials-blok__section {
-    padding: 20px; /* Отступы внутри секции отзыва */
-    background-color: #f9f9f9; /* Фоновый цвет секции отзыва */
-    border-radius: 15px; /* Скругление углов */
+    padding: 20px 20px 50px 20px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    background-color: #23201b;
-    text-align: center; /* Центрирование текста */
-    transition: transform 0.3s; /* Плавный эффект при наведении */
+    background-color: var(--dark-color);
+    border: 1px solid white;
+    text-align: center;
+    transition: transform 0.3s;
     cursor: grab;
+    margin: 10px;
+    /* Отступы вокруг секции */
 }
 
 .testimonial-image {
@@ -39,16 +42,33 @@
 }
 
 .custom-dot {
-    width: 15px; /* Ширина точки */
-    height: 15px; /* Высота точки */
-    border-radius: 50%; /* Закругление */
-    background-color: #333; /* Цвет точки */
-    margin: 0 5px; /* Отступы между точками */
-    opacity: 0.5; /* Прозрачность */
-    cursor: pointer; /* Указатель при наведении */
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #bbb;
+    /* Неактивный цвет дотов */
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.custom-dot.slick-active {
-    background-color: #ff6600; /* Цвет активной точки */
-    opacity: 1; /* Полная непрозрачность для активной точки */
+.custom-dot.active {
+    background-color: var(--main-color);
+    /* Цвет активного дота */
+}
+
+.testimonials .react-multi-carousel-dot-list {
+    position: absolute;
+    bottom: 17px;
+    /* Как вы хотите */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 520px) {
+    .testimonials-blok__section {
+        border: none;
+    }
 }
