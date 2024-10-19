@@ -77,9 +77,6 @@ export default function Navbar() {
         <Link href="/gallery" onClick={() => handleLinkClick('/gallery')} style={{ color: activePage === '/gallery' ? 'var(--main-color)' : '' }}>
           Галлерея
         </Link>
-        <Link href="/about-us" onClick={() => handleLinkClick('/about-us')} style={{ color: activePage === '/about-us' ? 'var(--main-color)' : '' }}>
-          О нас
-        </Link>
         <Link href="/news" onClick={() => handleLinkClick('/news')} style={{ color: activePage === '/news' ? 'var(--main-color)' : '' }}>
           Новости
         </Link>
