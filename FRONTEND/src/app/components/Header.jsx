@@ -9,7 +9,7 @@ export default function Header() {
         <h1 className="header__h1-2">Ресторан</h1>
         <h2 className="header__h1-3">Гурманы любят нас, ведь мы даем миру наши ожоги!</h2>
         <div className="header-blok__container">
-          <Link href="/menu"><button className='header__button-1'>ИССЛЕДУЙТЕ ЕДУ</button></Link>
+          <Link href="/menu"><button className='header__button-1'>К Блюдам</button></Link>
           <Link href="/booking"><button className='header__button-2'>Забронировать</button></Link>
         </div>
       </div>

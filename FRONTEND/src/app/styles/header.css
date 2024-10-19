@@ -80,3 +80,12 @@
         margin-bottom: 100px;
     }
 }
+
+@media (max-width: 530px) {
+    .header__h1-1, .header__h1-2 {
+        font-size: 250%;
+    }
+    .header__h1-3 {
+        font-size: 120%;
+    }
+}
