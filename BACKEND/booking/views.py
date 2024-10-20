@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 
-class ReservationCreateAPIView(generics.CreateAPIView):
+class BookingCreateAPIView(generics.CreateAPIView):
     queryset = Booking.objects.all()
     serializer_class = BookingFormSerializer
 

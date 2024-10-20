@@ -3,7 +3,9 @@ import environ
 
 env = environ.Env(
     # set casting, default value
-    DEBUG=(bool, False)
+    DEBUG=(bool, False),
+    ALLOWED_HOSTS=(str, '127.0.0.1,localhost'),
+    CORS_ALLOWED_ORIGINS=(str, 'http://127.0.0.1:8000,http://localhost:8000'),
 )
 
 # reading .env file
@@ -133,16 +135,20 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8000",
-    "http://127.0.0.1:8000",
-]
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'murodovsodiq1800@gmail.com'
-EMAIL_HOST_PASSWORD = 'hbzg uunj mjun hydc'
-DEFAULT_FROM_EMAIL = 'murodovsodiq1800@gmail.com'
+"""
+    EXTRA SETTINGS
+"""
+
+# CORSHEADER SETTINGS
+CORS_ALLOWED_ORIGINS = env('CORS_ALLOWED_ORIGINS').split(',')
+
+# EMAIL SETTINGS
+EMAIL_BACKEND = env("EMAIL_BACKEND")
+EMAIL_HOST = env("EMAIL_HOST")
+EMAIL_PORT = env("EMAIL_PORT")
+EMAIL_USE_TLS = env("EMAIL_USE_TLS")
+EMAIL_HOST_USER = env("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
+DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL")
 

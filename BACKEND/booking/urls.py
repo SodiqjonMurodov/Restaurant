@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import ReservationCreateAPIView, ConfirmReservationAPIView
+from .views import BookingCreateAPIView, ConfirmReservationAPIView
 
 urlpatterns = [
-    path('reserve', ReservationCreateAPIView.as_view(), name='reserve'),
+    path('booking-form', BookingCreateAPIView.as_view(), name='booking'),
     path('confirm/<str:token>', ConfirmReservationAPIView.as_view(), name='confirm'),
 ]
 
