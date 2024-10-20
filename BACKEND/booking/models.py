@@ -20,6 +20,8 @@ class Booking(BaseModel):
     time = models.TimeField()
     guests = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
+    is_confirmed = models.BooleanField(default=False)
+    confirmation_token = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
         return f'{self.full_name}'
