@@ -1,21 +1,24 @@
 from rest_framework import serializers
-from .models import Booking, Table, Payment
-
-
-class TableSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Table
-        fields = ['id', 'name', 'capacity', 'image', 'count', 'status', 'price']
+from .models import Booking
 
 
 class BookingFormSerializer(serializers.ModelSerializer):
+    day = serializers.DateField(format='%d.%m.%Y', input_formats=['%d.%m.%Y'])
+    time = serializers.TimeField(format='%H:%M', input_formats=['%H:%M'])
+
     class Meta:
         model = Booking
-        fields = ['full_name', 'phone', 'day', 'time', 'table']
+        fields = ['id', 'full_name', 'phone', 'day', 'time', 'email', 'guests']
 
+    def validate_full_name(self, value):
+        if len(value) == 0:
+            raise serializers.ValidationError("The full name must not be an empty string.")
+        if len(value) < 3 or len(value) > 100:
+            raise serializers.ValidationError("The full name must be between 3 and 100 characters long.")
+        return value
 
-class PaymentFormSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Payment
-        fields = ['card_name', 'card_serial', 'booking']
+    def validate_guests(self, value):
+        if value <= 0:
+            raise serializers.ValidationError("Enter a number greater than 0")
+        return value
 

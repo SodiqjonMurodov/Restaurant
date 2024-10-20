@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # local apps
     'booking',
     'restaurant',
+    'menu',
 
     # third party apps
     'rest_framework',
