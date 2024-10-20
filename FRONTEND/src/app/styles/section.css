@@ -1,10 +1,6 @@
 .section {
     padding: 50px 10px;
-    background-image: url('/images/section/section-bg.jpg');
-    background-attachment: fixed;
-    background-blend-mode: multiply;
-    background-color: #000000dd;
-    background-size: cover;
+    background: var(--dark-color);
 }
 
 .section h1 {

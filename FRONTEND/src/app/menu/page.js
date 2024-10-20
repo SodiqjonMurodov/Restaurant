@@ -1,9 +1,10 @@
-// pages/menu.js (серверный компонент)
-import Menu from './Menu'; // Импортируем клиентский компонент
+import React from 'react';
+import Section from './Section';
+import Title from '../components/Title';
 
-// Этот компонент автоматически будет серверным
-const MenuPage = async () => {
-    const res = await fetch('http://127.0.0.1:8000/api/v1/menu');
+export default async function Menu() {
+    // Получение данных с сервера
+    const res = await fetch('http://127.0.0.1:8000/api/v1/home/menu');
 
     if (!res.ok) {
         throw new Error('Ошибка при получении данных');
@@ -11,8 +12,10 @@ const MenuPage = async () => {
 
     const data = await res.json();
 
-    // Передаем данные в клиентский компонент
-    return <Menu data={data} />;
-};
-
-export default MenuPage;
+    return (
+        <div>
+            <Title />
+            <Section data={data} />
+        </div>
+    );
+}

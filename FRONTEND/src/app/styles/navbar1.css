@@ -29,13 +29,13 @@
     gap: 50px;
 }
 
-.navbar1__contact {
-    transition: .3s;
-    color: #fff;
+.navbar1-blok__section a {
     text-decoration: none;
+    color: #fff;
+    transition: .3s;
 }
 
-.navbar1__contact:hover {
+.navbar1-blok__section a:hover {
     opacity: .8;
 }
 

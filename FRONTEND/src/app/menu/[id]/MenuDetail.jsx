@@ -1,5 +1,4 @@
 'use client'
-import RatingPage from '@/app/components/rating/RatingPage';
 import React from 'react'
 import { IoTimeOutline } from "react-icons/io5";
 
@@ -24,7 +23,6 @@ export default function MenuDetail({ data }) {
                                     <IoTimeOutline className='menudetail__icon' />
                                     <b className='menudetail__time'>{data.time} мин</b>
                                 </div>
-                                <RatingPage />  
                             </div>
                         </div>
                     </div>

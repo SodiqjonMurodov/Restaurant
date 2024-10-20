@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
@@ -67,6 +67,10 @@ export default function Section({ data }) {
                                     <h1>{item.title}</h1>
                                     <h4>{item.subtitle}</h4>
                                     <p>{item.description}</p>
+                                    {/* Добавляем ссылку для открытия PDF */}
+                                    <a href={item.pdf} target="_blank" rel="noopener noreferrer">
+                                        Открыть PDF
+                                    </a>
                                 </div>
                             </div>
                         </div>

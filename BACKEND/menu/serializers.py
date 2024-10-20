@@ -21,4 +21,4 @@ class MenuSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Menu
-        fields = ['id', 'title', 'image']
+        fields = ['id', 'title', 'image', 'category']
