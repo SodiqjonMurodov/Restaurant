@@ -1,7 +1,10 @@
 from io import BytesIO
+
+from Tools.scripts.make_ctype import method
 from rest_framework import generics
+from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import Menu
+from .models import Menu, Food
 from .serializers import MenuSerializer
 from reportlab.lib.pagesizes import A4
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Table, TableStyle
@@ -48,14 +51,25 @@ def generate_menu_pdf():
 
 
 class MenuPDFView(APIView):
-    def get(self, request):
+    def get(self, request, pk):
+        # Get menu
+        try:
+            menu = Menu.objects.get(id=pk)
+        except Menu.DoesNotExist:
+            return Response({'error': 'Menu not found'}, status=404)
+
+        categories = []
+        for category in menu.category.all():
+            categories.append(category.name)
+        print(categories)
+
+
+
         # Generate the PDF
         pdf_buffer = generate_menu_pdf()
 
-        menu_title = Menu.objects.get(id=request.pk)
-
         # Return the PDF as a file response
-        response = FileResponse(pdf_buffer, as_attachment=True, filename=f'{menu_title}')
+        response = FileResponse(pdf_buffer, as_attachment=True, filename=f'{menu.title}.pdf')
         return response
 
 
