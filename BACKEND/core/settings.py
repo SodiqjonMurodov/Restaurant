@@ -5,7 +5,7 @@ env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False),
     ALLOWED_HOSTS=(str, '127.0.0.1,localhost'),
-    CORS_ALLOWED_ORIGINS=(str, 'http://127.0.0.1:8000,http://localhost:8000'),
+    CORS_ALLOWED_ORIGINS=(str, 'http://127.0.0.1:3000,http://localhost:3000'),
 )
 
 # reading .env file
