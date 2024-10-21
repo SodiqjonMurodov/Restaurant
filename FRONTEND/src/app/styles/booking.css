@@ -1,101 +1,73 @@
 .booking {
-    padding: 10px;
-    background-image: url('/images/booking.jpg');
-    background-size: cover;
-    background-position: right;
-    background-attachment: fixed;
-    background-blend-mode: multiply;
-    background-color: #00000098;
+    padding: 20px 10px;
 }
 
 .booking h1 {
-    color: #fff;
-    padding-top: 70px;
     text-align: center;
     margin-bottom: 20px;
-    font-size: 300%;
+}
+
+.error-text {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    max-width: 300px;
 }
 
 .booking-blok {
-
+    display: flex;
+    justify-content: center;
 }
 
 .booking-form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    padding: 50px 20px;
+    border: 1px solid black;
+    overflow: hidden;
 }
 
 .booking-form__section {
     display: flex;
     justify-content: center;
-    gap: 50px;
-    width: 100%;
+    gap: 30px;
 }
 
 .booking-form__section input {
     font-size: 110%;
     width: 300px;
-    padding: 5px 25px;
-    background-color: var(--dark-color);
-    color: #fff;
-    border: 1px solid var(--main-color);
-    height: 40px;
+    padding: 5px 10px;
     outline: none;
 }
 
-.booking-form__section textarea {
-    font-size: 110%;
-    padding: 5px 25px;
-    background-color: var(--dark-color);
-    border: 1px solid var(--main-color);
-    color: #fff;
-    width: 1000px;
-    outline: none;
+.booking-form__section-part {
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
 }
 
-.booking__button {
+.booking-form button {
     display: flex;
     justify-content: center;
     margin: auto;
+    width: 300px;
     font-size: 110%;
-    width: 200px;
-    padding: 10px 20px;
-    background-color: var(--dark-color);
-    color: #fff;
-    transition: .5s;
-    border: none;
+    padding: 5px;
     cursor: pointer;
-    border: 1px solid var(--main-color);
-    border-radius: 5px;
 }
 
-.booking__button:hover {
-    background-color: var(--main-color);
-    box-shadow: 0 0 10px 1px var(--main-color);
-}
+@media (max-width: 720px) {
 
-@media (max-width: 1040px) {
-    .booking-form__section-1 {
+    .booking-form__section {
+        display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 20px;
+        gap: 30px;
     }
-    .booking-form__section input {
+    .error-text {
         width: 100%;
+        min-height: 30px;
     }
-    .booking-form__section textarea {
-        min-height: 100px;
-        width: 100%;
-        min-width: 100%;
-        max-width: 100%;
-        max-height: 130px;
-    }
-    .booking h1 {
-        padding-top: 45px;
-    }
-    .booking__button {
-        max-width: 1000px;
-        width: 100%;
+    .booking-form__section-part {
+        min-height: 40px;
     }
 }

@@ -17,3 +17,7 @@
     --night-color: #2c2a24;
     --brown-color: #625b4b;
 }
+
+.hidden {
+    display: none;
+}

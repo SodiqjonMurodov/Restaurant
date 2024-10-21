@@ -3,6 +3,7 @@ from .models import Booking
 
 
 class BookingFormSerializer(serializers.ModelSerializer):
+    # day = serializers.DateField(format='%d.%m.%Y', input_formats=['%d.%m.%Y'])
     time = serializers.TimeField(format='%H:%M', input_formats=['%H:%M'])
 
     class Meta:
