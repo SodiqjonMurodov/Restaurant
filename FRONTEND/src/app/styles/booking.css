@@ -1,5 +1,7 @@
 .booking {
     padding: 20px 10px;
+    background-color: var(--dark-color);
+    color: #fff;
 }
 
 .booking h1 {
@@ -23,7 +25,7 @@
     display: flex;
     flex-direction: column;
     padding: 50px 20px;
-    border: 1px solid black;
+    border: 1px solid var(--main-color);
     overflow: hidden;
 }
 
@@ -38,6 +40,18 @@
     width: 300px;
     padding: 5px 10px;
     outline: none;
+    border: 1px solid var(--main-color);
+    background-color: var(--brown-color);
+    color: #fff;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px var(--brown-color) inset;
+    -webkit-text-fill-color: #fff; /* Цвет текста остается прежним */
+}
+
+.booking-form__section input::placeholder {
+    color: #fff;
 }
 
 .booking-form__section-part {
@@ -54,6 +68,29 @@
     font-size: 110%;
     padding: 5px;
     cursor: pointer;
+    transition: .5s;
+    border: none;
+}
+
+.booking-form button:hover {
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+.booking__date {
+    color: #fff;
+}
+
+.booking__date::placeholder {
+    color: #fff;
+}
+
+.booking__time {
+    color: #fff;
+}
+
+.booking__time::placeholder {
+    color: #fff;
 }
 
 @media (max-width: 720px) {
@@ -61,13 +98,27 @@
     .booking-form__section {
         display: flex;
         flex-direction: column;
-        gap: 30px;
     }
+
     .error-text {
         width: 100%;
+    }
+
+    .booking-form__section-part {
+        display: flex;
+        flex-direction: column;
         min-height: 30px;
     }
-    .booking-form__section-part {
-        min-height: 40px;
+    
+    .booking-form button {
+        margin-top: 30px;
+    }
+
+    .booking__email {
+        margin-top: 30px;
+    }
+
+    .booking__time {
+        margin-top: 30px;
     }
 }

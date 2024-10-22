@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { usePathname } from 'next/navigation'; // Используем usePathname вместо useRouter
@@ -83,7 +82,7 @@ export default function Navbar() {
         <Link href="/news" onClick={() => handleLinkClick('/news')} style={{ color: activePage === '/news' ? 'var(--main-color)' : '' }}>
           Новости
         </Link>
-        <Link className='navbar__link-button' href="/booking">
+        <Link href="/booking">
           <button className="book-button" onClick={() => handleLinkClick('/booking')}>
             Бронируй
           </button>
@@ -93,4 +92,4 @@ export default function Navbar() {
       {isOpen && <div className="overlay" onClick={toggleMenu} />}
     </nav>
   );
-}
+};

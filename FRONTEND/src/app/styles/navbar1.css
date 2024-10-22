@@ -19,10 +19,6 @@
     transition: .3s;
 }
 
-.navbar1__hover:hover {
-    text-decoration: underline;
-}
-
 .navbar1-blok__section {
     display: flex;
     justify-content: center;

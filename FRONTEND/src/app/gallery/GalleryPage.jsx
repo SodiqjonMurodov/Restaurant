@@ -20,13 +20,19 @@ export default function GalleryPage({ data }) {
         setIsOpen(false);
     };
 
-    const downloadImage = (url) => {
-        fetch(url, { mode: 'no-cors' })
-            .then(response => response.blob())
+    const downloadImage = (id) => {
+        // Отправляем запрос на /get-image/{id}
+        fetch(`http://127.0.0.1:8000/api/v1/get-image/${id}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Ошибка при загрузке изображения');
+                }
+                return response.blob();
+            })
             .then(blob => {
                 const link = document.createElement('a');
                 link.href = URL.createObjectURL(blob);
-                link.setAttribute('download', `image_${currentSlide + 1}.jpg`);
+                link.setAttribute('download', `image_${id}.jpg`);
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
@@ -71,7 +77,7 @@ export default function GalleryPage({ data }) {
                     <button className="close-button" onClick={closeCarousel}>×</button>
                     <button
                         className="download-button"
-                        onClick={() => downloadImage(data[currentSlide].image)}
+                        onClick={() => downloadImage(data[currentSlide].id)} // Используем id открытой фотографии
                     >
                         <FaDownload />
                     </button>

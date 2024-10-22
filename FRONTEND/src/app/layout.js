@@ -13,6 +13,8 @@ import './styles/testimonials.css'
 import './styles/gallery.css'
 import './styles/services.css'
 import './styles/menudetail.css'
+import './styles/contacts.css'
+import './styles/yandexgo.css'
 
 import LoadPage from './components/LoadPage'
 import ScrollTop from './components/ScrollTop'

@@ -37,7 +37,7 @@ class CompanySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Company
-        fields = ['id', 'name', 'phone', 'email', 'address', 'coordinate', 'media_links']
+        fields = ['id', 'name', 'phone', 'address', 'coordinate', 'media_links', 'latitude', 'longitude']
 
 
 class TestimonialSerializer(serializers.ModelSerializer):

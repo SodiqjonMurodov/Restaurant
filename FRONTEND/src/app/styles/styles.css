@@ -21,3 +21,8 @@
 .hidden {
     display: none;
 }
+
+.sar__img {
+    margin: 7px 0 0 5px;
+}
+

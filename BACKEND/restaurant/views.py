@@ -1,8 +1,35 @@
 from rest_framework import generics
+from rest_framework.views import APIView
+from django.http import FileResponse
+from rest_framework.exceptions import NotFound
 from .models import Cooks, Gallery, Company, Service, Testimonial, Post
 from .serializers import CooksHomeSerializer, GallerySerializer, CompanySerializer, TestimonialSerializer, \
     ServiceSerializer, PostsListSerializer, PostsHomeSerializer
 
+
+
+class DownloadImages(APIView):
+
+    def get(self, request, pk):
+        try:
+            image = Gallery.objects.get(id=pk)
+        except Gallery.DoesNotExist:
+            raise NotFound(f"Image with id {pk} not found")  # Более понятное сообщение об ошибке
+
+        image_file = image.image  # Объект файла (например, ImageField)
+
+        # Определяем content_type через библиотеку mimetypes
+        import mimetypes
+        content_type, encoding = mimetypes.guess_type(image_file.path)
+
+        if content_type is None:
+            content_type = 'application/octet-stream'  # Стандартное значение, если не удалось определить тип файла
+
+        response = FileResponse(image_file.open('rb'), content_type=content_type)
+        response['Content-Disposition'] = f'attachment; filename="{image_file.name}"'
+
+        return response
+    
 
 class PostsListApiView(generics.ListAPIView):
     queryset = Post.objects.all()
@@ -47,3 +74,5 @@ class TestimonialsHomeListApiView(generics.ListAPIView):
 class ServicesHomeListApiView(generics.ListAPIView):
     queryset = Service.objects.all()[:2]
     serializer_class = ServiceSerializer
+
+
