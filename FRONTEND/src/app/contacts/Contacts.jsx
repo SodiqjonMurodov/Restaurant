@@ -13,16 +13,12 @@ export default function ContactsPage({ data }) {
       ) : (
         data.map((item) => (
           <div key={item.id} className="contacts">
-            <div className="contacts-sar">
-            <h1>Наши контакты</h1>
-            <img className='sar__img' src="/images/title-helper.png" alt="" />
-            </div>
             <div className="contacts-blok">
               <div className="contacts-blok__section contacts-blok__section-1">
                 <div className="contacts-blok__section__container">
                   <div className="contacts-blok__section__container-part">
                     <LuPhone className='contacts__icon' />
-                    <p><a href={`tel:${item.phone}`}>{item.phone}</a></p>
+                    <p><a href={`tel:${item.phone}`}>{item.phone1}, {item.phone2}</a></p>
                   </div>
                   <div className="contacts-blok__section__container-part">
                     <MdOutlineEmail className='contacts__icon' />
@@ -31,6 +27,9 @@ export default function ContactsPage({ data }) {
                   <div className="contacts-blok__section__container-part">
                     <IoLocationOutline className='contacts__icon' />
                     <p>{item.address}</p>
+                  </div>
+                  <div className="contacts-blok__section__container-part">
+                    <YandexGo />
                   </div>
                 </div>
                 <div className="contacts-blok__section__container">
@@ -69,7 +68,6 @@ export default function ContactsPage({ data }) {
                 <div dangerouslySetInnerHTML={{ __html: item.coordinate }} className='contacts__map' />
               </div>
             </div>
-            <YandexGo />
           </div>
         ))
       )}

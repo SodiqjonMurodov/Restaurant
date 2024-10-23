@@ -85,6 +85,12 @@
     background-color: var(--main-color);
 }
 
+@media (max-width: 930px) {
+    .menu-links {
+        gap: 5px; /* Пробелы между элементами */
+    }
+}
+
 @media (max-width: 768px) {
     .menu-links {
         display: none;

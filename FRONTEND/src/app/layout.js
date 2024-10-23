@@ -18,9 +18,9 @@ import './styles/yandexgo.css'
 
 import LoadPage from './components/LoadPage'
 import ScrollTop from './components/ScrollTop'
-import Footer from './components/Footer'
 import Navbar from './components/Navbar'
-import Navbar1 from './components/Navbar1'
+import Navbar1 from './components/navbar/navbar1'
+import Footer from './components/footer/footer'
 
 export const metadata = {
   title: "Create Next App",

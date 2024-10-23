@@ -47,7 +47,6 @@ export default function Section({ data }) {
 
     return (
         <div className="section" ref={sectionRef}>
-            <h1>Специальные!</h1>
             <div className="section-blok">
                 {(!data || data.length === 0) ? (
                     <p>Нет меню!</p>
@@ -79,4 +78,4 @@ export default function Section({ data }) {
             </div>
         </div>
     );
-}
+};

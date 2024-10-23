@@ -1,10 +1,11 @@
-'use client'
+'use client';
 import React, { useEffect, useState } from 'react';
 
 export default function YandexGoPage({ data }) {
   const [isMobile, setIsMobile] = useState(false);
+  const [userLocation, setUserLocation] = useState(null); // Состояние для хранения местоположения
 
-  // Определение устройства
+  // Определение устройства и получение геолокации
   useEffect(() => {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
@@ -13,6 +14,19 @@ export default function YandexGoPage({ data }) {
       setIsMobile(true);
     } else {
       setIsMobile(false);
+    }
+
+    // Получаем геолокацию
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          setUserLocation({ latitude, longitude });
+        },
+        (error) => {
+          console.error('Ошибка получения геолокации:', error);
+        }
+      );
     }
   }, []);
 
@@ -34,13 +48,14 @@ export default function YandexGoPage({ data }) {
     const longitude = item.longitude;
     const address = encodeURIComponent(item.address); // Кодируем адрес для URL
 
-    if (!latitude || !longitude) {
-      console.error("Latitude or longitude is missing");
+    if (!latitude || !longitude || !userLocation) {
+      console.error("Latitude or longitude is missing or user location is not available");
       return;
     }
 
     // Формируем URL для Яндекс Такси, передавая адрес и координаты
-    const yandexGoWebUrl = `https://taxi.yandex.ru/?from=${address}&to=${latitude},${longitude}`;
+    const fromLocation = `${userLocation.latitude},${userLocation.longitude}`;
+    const yandexGoWebUrl = `https://taxi.yandex.ru/?from=${fromLocation}&to=${latitude},${longitude}`;
     window.open(yandexGoWebUrl, '_blank');
   };
 
@@ -51,15 +66,15 @@ export default function YandexGoPage({ data }) {
   return (
     <div className="yandexgo">
       {data.map((item) => (
-        <div key={item.id}>
+        <div key={item.id} className="yandexgo-blok">
           {/* Условие отображения в зависимости от устройства */}
           {isMobile ? (
-            <div onClick={() => handleClickMobile(item)} className="yandexgo-blok">
+            <div onClick={() => handleClickMobile(item)} className="yandexgo-blok__section">
               <img src="/images/yandexgo.png" alt="Яндекс Навигатор" />
               <p>Вызвать Такси</p>
             </div>
           ) : (
-            <div onClick={() => handleClickDesktop(item)} className="yandexgo-blok">
+            <div onClick={() => handleClickDesktop(item)} className="yandexgo-blok__section">
               <img src="/images/yandexgo.png" alt="Яндекс Карты" />
               <p>Вызвать Такси</p>
             </div>

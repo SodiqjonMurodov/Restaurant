@@ -104,6 +104,11 @@ export default function GalleryPage({ data }) {
                             </SwiperSlide>
                         ))}
                     </Swiper>
+
+                    {/* Кнопки навигации */}
+                    <div className="swiper-button-prev"></div>
+                    <div className="swiper-button-next"></div>
+
                     <div className="slide-counter">
                         {currentSlide + 1} / {data.length}
                     </div>

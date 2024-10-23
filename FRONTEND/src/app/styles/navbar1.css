@@ -41,6 +41,12 @@
     }
 }
 
+@media (max-width: 565px) {
+    .navbar1__phone2 {
+        display: none;
+    }
+}
+
 @media (max-width: 369px) {
     .navbar1-blok__section {
         gap: 20px;

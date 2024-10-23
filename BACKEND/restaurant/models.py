@@ -11,11 +11,16 @@ class BaseModel(models.Model):
 
 class Company(BaseModel):
     name = models.CharField(max_length=100)
-    phone = models.CharField(
+    phone1 = models.CharField(
         max_length=13,
         validators=[RegexValidator(regex=r'^\+?\d{9,13}$', message="Enter a valid phone number.")]
     )
+    phone2 = models.CharField(
+        max_length=13, blank=True, null=True,
+        validators=[RegexValidator(regex=r'^\+?\d{9,13}$', message="Enter a valid phone number.")]
+    )
     address = models.CharField(max_length=255)
+    about_us = models.TextField()
     coordinate = models.TextField(blank=True, null=True)
     latitude = models.FloatField(blank=True, null=True)
     longitude = models.FloatField(blank=True, null=True)
