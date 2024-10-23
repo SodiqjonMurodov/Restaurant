@@ -11,7 +11,7 @@ class CooksHomeSerializer(serializers.ModelSerializer):
 class PostsListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ['id', 'title', 'subtitle', 'description', 'image']
+        fields = ['id', 'title', 'subtitle', 'description', 'image', 'created_at']
 
 
 class PostsHomeSerializer(serializers.ModelSerializer):

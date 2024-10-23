@@ -57,9 +57,9 @@ class Post(BaseModel):
     subtitle = models.CharField(max_length=255)
     description = models.TextField()
     image = models.ImageField(upload_to='posts')
-    created_at = models.DateTimeField(auto_now_add=True)
     media_link1 = models.TextField(blank=True, null=True)
     media_link2 = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f'{self.title}'
