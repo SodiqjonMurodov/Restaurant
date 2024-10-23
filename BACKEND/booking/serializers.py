@@ -3,12 +3,11 @@ from .models import Booking
 
 
 class BookingFormSerializer(serializers.ModelSerializer):
-    # day = serializers.DateField(format='%d.%m.%Y', input_formats=['%d.%m.%Y'])
     time = serializers.TimeField(format='%H:%M', input_formats=['%H:%M'])
 
     class Meta:
         model = Booking
-        fields = ['id', 'full_name', 'phone', 'day', 'time', 'email', 'guests', 'is_confirmed']
+        fields = ['id', 'full_name', 'phone', 'day', 'time', 'email', 'guests', 'is_confirmed', 'created_at']
         read_only_fields = ['is_confirmed']
 
     def validate_full_name(self, value):
