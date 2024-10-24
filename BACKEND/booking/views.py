@@ -46,23 +46,3 @@ class ConfirmReservationAPIView(APIView):
         return Response({'message': 'Booking confirmed'}, status=status.HTTP_200_OK)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

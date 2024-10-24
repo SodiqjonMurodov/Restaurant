@@ -2,10 +2,10 @@ from rest_framework import generics
 from rest_framework.views import APIView
 from django.http import FileResponse
 from rest_framework.exceptions import NotFound
+from rest_framework.pagination import PageNumberPagination
 from .models import Cooks, Gallery, Company, Service, Testimonial, Post
 from .serializers import CooksHomeSerializer, GallerySerializer, CompanySerializer, TestimonialSerializer, \
     ServiceSerializer, PostsListSerializer, PostsHomeSerializer
-
 
 
 class DownloadImages(APIView):
@@ -29,11 +29,18 @@ class DownloadImages(APIView):
         response['Content-Disposition'] = f'attachment; filename="{image_file.name}"'
 
         return response
-    
+
+
+class CustomPagination(PageNumberPagination):
+    page_size = 5
+    page_size_query_param = 10
+    max_page_size = 100
+
 
 class PostsListApiView(generics.ListAPIView):
     queryset = Post.objects.all()
     serializer_class = PostsListSerializer
+    pagination_class = CustomPagination
 
 
 class PostDetailApiView(generics.RetrieveAPIView):
@@ -74,5 +81,3 @@ class TestimonialsHomeListApiView(generics.ListAPIView):
 class ServicesHomeListApiView(generics.ListAPIView):
     queryset = Service.objects.all()[:2]
     serializer_class = ServiceSerializer
-
-
